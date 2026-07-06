@@ -1,0 +1,213 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech News & Recent Activities</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+nav{
+    background:#1e293b;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#facc15;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.card p{
+    line-height:1.6;
+}
+
+button{
+    margin-top:15px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+#message{
+    text-align:center;
+    margin-top:30px;
+    font-size:22px;
+    color:#2563eb;
+    font-weight:bold;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+.clock{
+    font-size:18px;
+    margin-top:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>🌍 Tech News & Recent Activities</h1>
+<p>Explore the latest trends in technology and innovation.</p>
+<div class="clock" id="clock"></div>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Technology</a>
+<a href="#">AI</a>
+<a href="#">Cloud</a>
+<a href="#">Cyber Security</a>
+<a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800" alt="AI">
+<div class="card-content">
+<h3>Artificial Intelligence</h3>
+<p>AI is transforming healthcare, education, software development, and business automation.</p>
+<button onclick="show('Artificial Intelligence is shaping the future! 🤖')">Read More</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Cloud">
+<div class="card-content">
+<h3>Cloud Computing</h3>
+<p>Cloud platforms help organizations deploy scalable and secure applications worldwide.</p>
+<button onclick="show('Cloud computing enables scalable modern applications. ☁️')">Read More</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" alt="Cyber Security">
+<div class="card-content">
+<h3>Cyber Security</h3>
+<p>Organizations are adopting stronger security measures to protect data from cyber threats.</p>
+<button onclick="show('Stay safe online with strong cybersecurity practices! 🔒')">Read More</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Programming">
+<div class="card-content">
+<h3>Programming Skills</h3>
+<p>Java, Python, JavaScript, Spring Boot, Docker, and AWS continue to be highly valued skills.</p>
+<button onclick="show('Keep learning and building projects every day! 💻')">Read More</button>
+</div>
+</div>
+
+</div>
+
+<div id="message"></div>
+
+</div>
+
+<footer>
+<h3>Technology Dashboard</h3>
+<p>Created using HTML, CSS & JavaScript</p>
+</footer>
+
+<script>
+function show(text){
+    document.getElementById("message").innerHTML=text;
+}
+
+function updateClock(){
+    document.getElementById("clock").innerHTML=
+    "Current Time: "+new Date().toLocaleString();
+}
+
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>
+```
+
