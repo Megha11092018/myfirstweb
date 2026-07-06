@@ -1,213 +1,341 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tech News & Recent Activities</title>
+<title>Cloud & DevOps Learning Hub</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Segoe UI',sans-serif;
+    scroll-behavior:smooth;
 }
-
 body{
-    background:#f4f7fb;
-    color:#333;
+    background:#0b1120;
+    color:#fff;
 }
-
 header{
-    background:linear-gradient(135deg,#0f172a,#2563eb);
-    color:white;
-    padding:25px;
-    text-align:center;
-}
-
-nav{
-    background:#1e293b;
+    position:fixed;
+    width:100%;
+    top:0;
+    background:#111827;
+    padding:15px 8%;
     display:flex;
-    justify-content:center;
-    gap:25px;
-    padding:15px;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
 }
-
+.logo{
+    font-size:28px;
+    color:#38bdf8;
+    font-weight:bold;
+}
 nav a{
     color:white;
+    margin-left:25px;
     text-decoration:none;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#facc15;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:30px auto;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
     transition:.3s;
 }
-
-.card:hover{
-    transform:translateY(-8px);
+nav a:hover{
+    color:#38bdf8;
 }
-
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:20px;
-}
-
-.card h3{
-    color:#2563eb;
-    margin-bottom:10px;
-}
-
-.card p{
-    line-height:1.6;
-}
-
-button{
-    margin-top:15px;
-    background:#2563eb;
-    color:white;
+.toggle{
+    background:#38bdf8;
+    color:black;
     border:none;
-    padding:10px 20px;
-    border-radius:6px;
+    padding:8px 15px;
+    border-radius:20px;
     cursor:pointer;
 }
-
-button:hover{
-    background:#1d4ed8;
-}
-
-#message{
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
     text-align:center;
-    margin-top:30px;
-    font-size:22px;
-    color:#2563eb;
-    font-weight:bold;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
 }
-
-footer{
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+.hero h1{
+    font-size:60px;
 }
-
-.clock{
+.hero h1 span{
+    color:#38bdf8;
+}
+.hero p{
+    margin:20px 0;
+    width:70%;
     font-size:18px;
-    margin-top:10px;
+    line-height:1.7;
+}
+.hero button{
+    padding:15px 35px;
+    background:#38bdf8;
+    color:black;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+}
+section{
+    padding:80px 8%;
+}
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    padding:25px;
+    transition:.4s;
+}
+.card:hover{
+    transform:translateY(-10px);
+    background:#2563eb;
+}
+.card h3{
+    margin-bottom:15px;
+}
+.card p{
+    line-height:1.7;
+    color:#ddd;
+}
+.roadmap{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+.step{
+    background:#111827;
+    padding:20px;
+    border-left:5px solid #38bdf8;
+    border-radius:10px;
+}
+.step h4{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.stat{
+    background:#1e293b;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+}
+.stat h2{
+    color:#38bdf8;
+    font-size:45px;
+}
+.tools{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+.tool{
+    background:#111827;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:.4s;
+}
+.tool:hover{
+    transform:scale(1.05);
+}
+.tool img{
+    width:70px;
+    margin-bottom:15px;
+}
+.resources{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+.resource{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+}
+.resource button{
+    margin-top:15px;
+    background:#38bdf8;
+    border:none;
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
+}
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+}
+.contact button{
+    padding:15px;
+    background:#38bdf8;
+    border:none;
+    width:100%;
+    border-radius:10px;
+    cursor:pointer;
+}
+footer{
+    background:#111827;
+    padding:30px;
+    text-align:center;
+}
+.light{
+    background:#f4f4f4;
+    color:#222;
+}
+.light header{
+    background:white;
+}
+.light nav a{
+    color:#222;
+}
+.light .card,
+.light .tool,
+.light .resource,
+.light .step,
+.light .stat{
+    background:white;
+    color:#222;
+}
+@media(max-width:768px){
+.hero h1{font-size:40px;}
+.hero p{width:90%;}
+.contact{
+grid-template-columns:1fr;
+}
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-<h1>🌍 Tech News & Recent Activities</h1>
-<p>Explore the latest trends in technology and innovation.</p>
-<div class="clock" id="clock"></div>
-</header>
+<div class="logo">CloudHub</div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Technology</a>
-<a href="#">AI</a>
-<a href="#">Cloud</a>
-<a href="#">Cyber Security</a>
-<a href="#">Contact</a>
+<a href="#home">Home</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#courses">Courses</a>
+<a href="#tools">Tools</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<div class="container">
+<button class="toggle" onclick="mode()">Dark/Light</button>
+</header>
+
+<section class="hero" id="home">
+
+<h1>Become a <span>Cloud & DevOps</span> Engineer</h1>
+
+<p>
+Master Linux, Git, Docker, Kubernetes, AWS,
+CI/CD and become industry ready through
+an interactive learning roadmap.
+</p>
+
+<button onclick="scrollToRoadmap()">Start Learning</button>
+
+</section>
+
+<section id="roadmap">
+
+<h2 class="title">Learning Roadmap</h2>
+
+<div class="roadmap">
+
+<div class="step">
+<h4>Linux</h4>
+<p>Learn shell commands, permissions,
+file system and process management.</p>
+</div>
+
+<div class="step">
+<h4>Git & GitHub</h4>
+<p>Version control, repositories,
+branching and collaboration.</p>
+</div>
+
+<div class="step">
+<h4>Maven</h4>
+<p>Project lifecycle, dependencies,
+plugins and build automation.</p>
+</div>
+
+<div class="step">
+<h4>Docker</h4>
+<p>Images, Containers,
+Docker Hub and Docker Compose.</p>
+</div>
+
+<div class="step">
+<h4>Kubernetes</h4>
+<p>Pods, Deployments,
+Services and Scaling.</p>
+</div>
+
+<div class="step">
+<h4>AWS</h4>
+<p>EC2, S3, IAM,
+VPC, RDS and CloudWatch.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="courses">
+
+<h2 class="title">Popular Courses</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800" alt="AI">
-<div class="card-content">
-<h3>Artificial Intelligence</h3>
-<p>AI is transforming healthcare, education, software development, and business automation.</p>
-<button onclick="show('Artificial Intelligence is shaping the future! 🤖')">Read More</button>
-</div>
+<h3>Linux Essentials</h3>
+<p>Master Linux commands and administration for DevOps engineers.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Cloud">
-<div class="card-content">
-<h3>Cloud Computing</h3>
-<p>Cloud platforms help organizations deploy scalable and secure applications worldwide.</p>
-<button onclick="show('Cloud computing enables scalable modern applications. ☁️')">Read More</button>
-</div>
+<h3>Git Mastery</h3>
+<p>Learn Git branching, merging and GitHub collaboration.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" alt="Cyber Security">
-<div class="card-content">
-<h3>Cyber Security</h3>
-<p>Organizations are adopting stronger security measures to protect data from cyber threats.</p>
-<button onclick="show('Stay safe online with strong cybersecurity practices! 🔒')">Read More</button>
-</div>
+<h3>Docker Bootcamp</h3>
+<p>Create containers and deploy applications easily.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Programming">
-<div class="card-content">
-<h3>Programming Skills</h3>
-<p>Java, Python, JavaScript, Spring Boot, Docker, and AWS continue to be highly valued skills.</p>
-<button onclick="show('Keep learning and building projects every day! 💻')">Read More</button>
-</div>
+<h3>AWS Cloud</h3>
+<p>Launch EC2 instances and build scalable cloud applications.</p>
 </div>
 
 </div>
 
-<div id="message"></div>
-
-</div>
-
-<footer>
-<h3>Technology Dashboard</h3>
-<p>Created using HTML, CSS & JavaScript</p>
-</footer>
-
-<script>
-function show(text){
-    document.getElementById("message").innerHTML=text;
-}
-
-function updateClock(){
-    document.getElementById("clock").innerHTML=
-    "Current Time: "+new Date().toLocaleString();
-}
-
-setInterval(updateClock,1000);
-updateClock();
-</script>
-
-</body>
-</html>
-```
-
+</section>
